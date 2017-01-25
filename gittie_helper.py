@@ -34,7 +34,9 @@ class GittieHelper():
         Method sets day number from beginning of the year to attribute and validate input
         :param day_number:
         """
-        pass
+        if 0 < day_number < 365:
+            raise ValueError("day_number should be between 0 and 365")
+        self.day_number = day_number
 
     def get_value(self):
         """
