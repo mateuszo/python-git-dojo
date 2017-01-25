@@ -11,6 +11,22 @@ class GittieHelper():
         Method sets temperature to attribute and validate input
         :param temperature_degree:
         """
+
+        self.temperature_degree = float(temperature_degree)
+
+
+        max_temp = 150
+        min_temp = 100
+
+
+        if temperature_degree <= min_temp:
+            raise ValueError('To cold for gittie')
+        elif temperature_degree >= max_temp:
+            raise ValueError('To hot for gittie')
+        else:
+            return temperature_degree
+
+
         pass
 
     def set_humidity(self, humidity_value):
@@ -18,7 +34,10 @@ class GittieHelper():
         Method sets humidity level to attribute and validate input
         :param humidity_value:
         """
-        pass
+        self.humanitity_value = humidity_value
+
+
+        return humidity_value
 
     def set_air_pollution(self, air_pollution_level):
         """
