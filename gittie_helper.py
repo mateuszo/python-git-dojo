@@ -49,6 +49,7 @@ class GittieHelper():
             raise ValueError("day_number should be between 0 and 365")
         self.day_number = day_number
 
+
     def to_go_or_not_to_go(self):
         """
         Method should calculate if exiting home is safe for gittie
@@ -61,5 +62,6 @@ class GittieHelper():
 
         if self.air_pollution_level > 44:
             print('Do not go')
+
 
 
