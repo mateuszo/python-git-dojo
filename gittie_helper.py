@@ -11,8 +11,6 @@ class GittieHelper():
         Method sets temperature to attribute and validate input
         :param temperature_degree:
         """
-        if 80 < temperature_degree < 150:
-            raise ValueError('It\'s not good temperature for gittie')
 
         self.temperature_degree = temperature_degree
 
@@ -25,7 +23,10 @@ class GittieHelper():
         Method sets humidity level to attribute and validate input
         :param humidity_value:
         """
-        self.humanitity_value = humidity_value
+        if humidity_value < 0:
+            raise ValueError('Humidity level must be positive number')
+
+        self.humidity_value = humidity_value
 
 
         return humidity_value
@@ -48,8 +49,17 @@ class GittieHelper():
             raise ValueError("day_number should be between 0 and 365")
         self.day_number = day_number
 
-    def get_value(self):
+    def to_go_or_not_to_go(self):
         """
         Method should calculate if exiting home is safe for gittie
         """
-        pass
+        if 80 < self.temperature_degree < 150:
+            print('It\'s not good temperature for gittie')
+
+        if self.humidity_value > 67:
+            print('Do not go')
+
+        if self.air_pollution_level > 44:
+            print('Do not go')
+
+
