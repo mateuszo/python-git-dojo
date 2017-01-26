@@ -52,4 +52,4 @@ class GittieHelper():
         """
         Method should calculate if exiting home is safe for gittie
         """
-        pass
+        return self.air_pollution_level
